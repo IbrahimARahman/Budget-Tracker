@@ -1,4 +1,3 @@
-"use client"
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -18,7 +17,11 @@ import EmojiPicker from "emoji-picker-react"
 import { useState } from "react";
 import { toast } from "sonner";
 
-export default function CreateBudget(){
+interface createBudgetProps {
+  refreshData: () => {}; 
+}
+
+export default function CreateBudget({refreshData}: createBudgetProps){
 
   const [emojiIcon, setEmojiIcon] = useState("😀");
   const [openEmojiPicker, setOpenEmojiPicker] = useState(false);
@@ -38,6 +41,7 @@ export default function CreateBudget(){
     }).returning({insertedId: Budgets.id})
 
     if (result){
+      refreshData()
       toast("New Budget Created")
     }
   }
