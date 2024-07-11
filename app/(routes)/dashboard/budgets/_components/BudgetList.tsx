@@ -6,16 +6,7 @@ import { Budgets, Expenses } from "@/utils/schema";
 import { useEffect, useState } from "react";
 import { useUser } from "@clerk/nextjs";
 import BudgetItem from "./BudgetItem";
-
-export type budgetQuery = {
-  amount: number;
-  createdBy: string;
-  icon: string;
-  id: number;
-  name: string;
-  totalItems: number;
-  totalSpent?: number;
-};
+import { budgetQuery } from "@/types/queries";
 
 export default function BudgetList() {
   const [budgetList, setBudgetList] = useState({});
