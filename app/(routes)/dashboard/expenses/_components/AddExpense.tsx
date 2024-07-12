@@ -4,7 +4,7 @@ import { db } from "@/utils/dbConfig";
 import { Budgets, Expenses } from "@/utils/schema";
 import { User } from "@clerk/nextjs/server";
 import moment from "moment";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { toast } from "sonner";
 
 export default function AddExpense({
@@ -30,6 +30,8 @@ export default function AddExpense({
 
     if (result) {
       refreshData();
+      setName("");
+      setAmount("");
       toast("New Expense Added!");
     }
   };
@@ -42,6 +44,7 @@ export default function AddExpense({
         <Input
           placeholder="e.g. Vegetables"
           onChange={(e) => setName(e.target.value)}
+          value={name}
         />
       </div>
       <div className="mt-2">
@@ -50,6 +53,7 @@ export default function AddExpense({
           placeholder="e.g. 25"
           type="number"
           onChange={(e) => setAmount(e.target.value)}
+          value={amount}
         />
       </div>
       <Button

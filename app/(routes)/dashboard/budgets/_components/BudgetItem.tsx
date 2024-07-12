@@ -5,14 +5,14 @@ export default function BudgetItem({ budget }: { budget: budgetQuery }) {
   const calculateProgress = () => {
     const percentage =
       ((budget.totalSpent ? budget.totalSpent : 0) / budget.amount) * 100;
-    return percentage.toFixed(2);
+    return Number(percentage.toFixed(2)) <= 100 ? percentage.toFixed(2) : 100;
   };
 
   return (
     <Link
       href={"/dashboard/expenses/" + budget.id}
       className="p-5 border rounded-lg
-    hover:shadow-md cursor-pointer h-[170px]"
+    hover:shadow-md cursor-pointer h-[145px]"
     >
       <div className="flex gap-2 items-center justify-between">
         <div className="flex gap-2 items-center">
