@@ -28,7 +28,7 @@ export default function Page() {
             </a>
 
             <h2 className="mt-6 text-2xl font-bold text-white sm:text-3xl md:text-4xl">
-              Welcome to Budget Track
+              Welcome to BudgetTrack
             </h2>
           </div>
         </section>
@@ -56,17 +56,12 @@ export default function Page() {
                 </svg>
               </a>
 
-              <h1 className="mt-2 text-2xl font-bold text-gray-900 sm:text-3xl md:text-4xl">
-                Welcome to Squid 🦑
+              <h1 className="mt-2 text-2xl font-bold text-gray-900 sm:text-3xl md:text-4xl mb-4">
+                Welcome to BudgetTrack 
               </h1>
-
-              <p className="mt-4 leading-relaxed text-gray-500">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eligendi nam dolorum aliquam,
-                quibusdam aperiam voluptatum.
-              </p>
             </div>
             
-            <SignIn />
+            <SignIn forceRedirectUrl={"/dashboard"}/>
 
           </div>
         </main>

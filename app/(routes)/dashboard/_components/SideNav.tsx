@@ -26,12 +26,6 @@ export default function SideNav() {
       icon: ReceiptText,
       path: "/dashboard/expenses",
     },
-    {
-      id: 4,
-      name: "Upgrade",
-      icon: ShieldCheck,
-      path: "/dashboard/upgrade",
-    },
   ];
 
   const path = usePathname();
