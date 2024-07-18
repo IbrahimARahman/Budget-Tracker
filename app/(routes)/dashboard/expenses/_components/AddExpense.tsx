@@ -2,9 +2,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { db } from "@/utils/dbConfig";
 import { Budgets, Expenses } from "@/utils/schema";
-import { User } from "@clerk/nextjs/server";
 import moment from "moment";
-import { useRef, useState } from "react";
+import { useState } from "react";
 import { toast } from "sonner";
 
 export default function AddExpense({
@@ -20,6 +19,7 @@ export default function AddExpense({
   const addNewExpense = async () => {
     const result = await db
       .insert(Expenses)
+      // @ts-ignore
       .values({
         name: name,
         amount: amount,

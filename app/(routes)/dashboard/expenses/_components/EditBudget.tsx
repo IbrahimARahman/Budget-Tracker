@@ -12,7 +12,6 @@ import {
 } from "@/components/ui/dialog";
 import EmojiPicker from "emoji-picker-react";
 import { useEffect, useState } from "react";
-import { useUser } from "@clerk/nextjs";
 import { Input } from "@/components/ui/input";
 import { budgetQuery } from "@/types/queries";
 import { db } from "@/utils/dbConfig";
@@ -31,8 +30,6 @@ export default function EditBudget({
   const [openEmojiPicker, setOpenEmojiPicker] = useState(false);
   const [name, setName] = useState("");
   const [amount, setAmount] = useState(0);
-
-  const { user } = useUser();
 
   useEffect(() => {
     if(budgetInfo){

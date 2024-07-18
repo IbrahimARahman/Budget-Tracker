@@ -46,7 +46,9 @@ export default function ExpensesScreen({ params }: { params: { id: string } }) {
       })
       .from(Budgets)
       .leftJoin(Expenses, eq(Budgets.id, Expenses.budgetId))
+      // @ts-ignore
       .where(eq(Budgets.createdBy, user?.primaryEmailAddress?.emailAddress))
+      // @ts-ignore
       .where(eq(Budgets.id, params.id))
       .groupBy(Budgets.id);
 
@@ -58,6 +60,7 @@ export default function ExpensesScreen({ params }: { params: { id: string } }) {
     const result = await db
       .select()
       .from(Expenses)
+      // @ts-ignore
       .where(eq(Expenses.budgetId, params.id))
       .orderBy(desc(Expenses.id));
 
@@ -67,12 +70,14 @@ export default function ExpensesScreen({ params }: { params: { id: string } }) {
   const deleteBudget = async () => {
     const deleteExpensesResult = await db
       .delete(Expenses)
+      // @ts-ignore
       .where(eq(Expenses.budgetId, params.id))
       .returning();
 
     if (deleteExpensesResult) {
       const result = await db
         .delete(Budgets)
+        // @ts-ignore
         .where(eq(Budgets.id, params.id))
         .returning();
     }

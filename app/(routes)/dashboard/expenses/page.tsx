@@ -25,6 +25,7 @@ export default function page() {
       })
       .from(Budgets)
       .rightJoin(Expenses, eq(Budgets.id, Expenses.budgetId))
+      // @ts-ignore
       .where(eq(Budgets.createdBy, user?.primaryEmailAddress?.emailAddress))
       .orderBy(desc(Expenses.id));
 

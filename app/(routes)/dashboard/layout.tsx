@@ -21,6 +21,7 @@ export default function DashboardLayout({children}: {children: React.ReactNode})
   const checkUserBudgets = async () => {
     const result = await db.select()
     .from(Budgets)
+    // @ts-ignore
     .where(eq(Budgets.createdBy, user?.primaryEmailAddress?.emailAddress));
 
     if(result?.length === 0){

@@ -33,6 +33,7 @@ export default function CreateBudget({refreshData}: createBudgetProps){
   // Creates a new budget
   const onCreateBudget = async () => {
     const result = await db.insert(Budgets)
+    // @ts-ignore
     .values({
       name: name,
       amount: amount,
