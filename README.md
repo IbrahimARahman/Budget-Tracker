@@ -1,9 +1,32 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# BudgetTrack
+## Web App: [budgettrack.xyz](https://www.budgettrack.xyz/)
 
-## Getting Started
+## Table of Contents
+- [About the App](#about-the-app)
+- [Screenshots](#screenshots)
+- [Tech Stack](#tech-stack)
+- [Setup](#setup)
+- [Status](#status)
 
-First, run the development server:
+### About the App
+BudgetTrack is a budgeting app that allows users to keep track of and visualize their budgets and expenses. User authentication is handled with Clerk. Information is stored in a Neon PostgreSQL database and queried with Drizzle ORM.
 
+### Screenshots
+![Landing Page](./public/landing.png)
+![Authentication](./public/auth.png)
+![Dashboard Image](./public/dashboard.png)
+![Budgets](./public/budgets.png)
+![Expenses](./public/expenses.png)
+
+### Tech Stack
+![Tech Stack](https://github-readme-tech-stack.vercel.app/api/cards?title=Tech+Stack&align=center&titleAlign=center&lineCount=2&width=550&line1=react%2Creact%2C58a6ff%3Bnext.js%2Cnext.js%2Cffffff%3Btailwindcss%2Ctailwind+css%2C06B6D4%3Btypescript%2Ctypescript%2C3178C6%3B&line2=clerk%2Cclerk%2C6C47FF%3Bdrizzle%2Cdrizzle%2CC5F74F%3Bpostgresql%2Cneon%2C4169E1%3B)
+
+### Setup
+If you'd like to replicate the site on your local system you should: <br>
+
+1. Clone the repository onto your system. 
+2. Make sure you have either npm, yarn, pnpm, or bun installed.
+3. Run the development server:
 ```bash
 npm run dev
 # or
@@ -13,24 +36,7 @@ pnpm dev
 # or
 bun dev
 ```
+4. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### Status
+**Completed**
